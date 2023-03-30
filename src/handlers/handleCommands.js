@@ -11,7 +11,6 @@ module.exports = async (client) => {
             commandArray.push(command.data.toJSON())
         }
 
-        console.log(commandArray);
         const guildId = "1090264557244645466";
         const rest = new REST({version:'10'}).setToken(process.env.TOKEN);
         try {
