@@ -9,7 +9,8 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMessageReactions,
-    GatewayIntentBits.GuildVoiceStates
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.GuildMembers,
   ],
   partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 });
@@ -22,18 +23,6 @@ for (const file of handlerFiles) {
   require(`./src/handlers/${file}`)(client);
 }
 
-// client.on("voiceStateUpdate",async (oldState,newState)=>{
-//   const user =await client.users.fetch(newState.id);
-//   console.log();
-//   console.log(user);
-//   const member = newState.guild.member(user);
-//   if(!oldState && newState.channel.id === "1090935205587587213"){
-//     const channel = await newState.guild.channels.create
-//     voiceCollection.set(user.id,channel.id);
-//   }else if(!newState.channel){
-//     if(oldState.channel === voiceCollection.get(newState.id))return oldState.channel.delete();
-//   }
-// })
 
 client.handleEvents();
 client.handleCommands();
