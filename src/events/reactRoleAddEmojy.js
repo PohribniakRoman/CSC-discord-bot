@@ -20,7 +20,7 @@ module.exports = {
                 roleToSign = SERVER_DATA.roleId.s124;
             break;
         }
-        if(roleToSign !== null && reaction.message.id === "1090708035606945833"){
+        if(roleToSign !== null && reaction.message.id === SERVER_DATA.bindRole){
             for(const role in SERVER_DATA.roleId){
                 reaction.message.guild.members.removeRole({user:user.id,role:SERVER_DATA.roleId[role]});
             }
