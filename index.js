@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Client, GatewayIntentBits, Collection, Partials, Events } = require("discord.js");
 const fs = require("fs");
 
-const { TOKEN } = process.env;
+const TOKEN = "MTA5MDMzOTE2Njc5OTI4MjIxMQ.Gtse75.ZqTML1H_1W3G-NeBN6MIMejrKoCuIKjyfCGBsk";
 
 const client = new Client({
   intents: [
