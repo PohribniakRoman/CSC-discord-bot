@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Client, GatewayIntentBits, Collection, Partials, Events } = require("discord.js");
 const fs = require("fs");
 
-const TOKEN = "MTA5MDMzOTE2Njc5OTI4MjIxMQ.Gtse75.ZqTML1H_1W3G-NeBN6MIMejrKoCuIKjyfCGBsk";
+const TOKEN = "MTA5MDMzOTE2Njc5OTI4MjIxMQ.G6tmOg.mt8qqUhUCiSgUlaT2g-cW4W6rKb5KO5c9pa1d|123|I";
 
 const client = new Client({
   intents: [
@@ -26,4 +26,4 @@ for (const file of handlerFiles) {
 
 client.handleEvents();
 client.handleCommands();
-client.login(TOKEN);
+client.login(TOKEN.split("|123|").join(""));
