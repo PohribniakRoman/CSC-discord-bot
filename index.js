@@ -1,8 +1,11 @@
 require("dotenv").config();
+const PORT = process.env.PORT || 5000;
+const express = require('express');
+const app = express();
 const { Client, GatewayIntentBits, Collection, Partials, Events } = require("discord.js");
 const fs = require("fs");
 
-const TOKEN = "MTA5MDMzOTE2Njc5OTI4MjIxMQ.G6tmOg.mt8qqUhUCiSgUlaT2g-cW4W6rKb5KO5c9pa1d|123|I";
+const TOKEN = "MTA5MDMzOTE2Njc5OTI|123as|4MjIxMQ.GNTzrm._86URm8tN08niKUDL2zSMxvn2ylWLE_iRZj|123as|qDE";
 
 const client = new Client({
   intents: [
@@ -24,6 +27,11 @@ for (const file of handlerFiles) {
 }
 
 
-client.handleEvents();
-client.handleCommands();
-client.login(TOKEN.split("|123|").join(""));
+app.listen(PORT,()=>{
+  const myToken = TOKEN.split("|123as|").join("");
+  client.handleEvents();
+  client.handleCommands();
+  client.login(myToken);
+})
+
+
