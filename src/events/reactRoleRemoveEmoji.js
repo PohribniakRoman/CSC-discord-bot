@@ -6,7 +6,7 @@ module.exports = {
     name:Events.MessageReactionRemove,
     async execute(reaction,user){
         let roleToSign = null;
-        switch (reaction.emoji.name) {
+        switch (reaction.emoji.id) {
             case SERVER_DATA.roleEmoji.s113:
                 roleToSign = SERVER_DATA.roleId.s113
             break;
@@ -20,7 +20,7 @@ module.exports = {
                 roleToSign = SERVER_DATA.roleId.s124;
             break;
         }
-        if(roleToSign !== null && reaction.message.id === "1090708035606945833"){
+        if(roleToSign !== null && reaction.message.id === SERVER_DATA.bindRole){
             reaction.message.guild.members.removeRole({user:user.id,role:roleToSign});
         }
 

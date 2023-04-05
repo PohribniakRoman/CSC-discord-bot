@@ -6,7 +6,7 @@ module.exports = {
     name:Events.MessageReactionAdd,
     async execute(reaction,user){
         let roleToSign = null;
-        switch (reaction.emoji.name) {
+        switch (reaction.emoji.id) {
             case SERVER_DATA.roleEmoji.s113:
                 roleToSign = SERVER_DATA.roleId.s113
             break;

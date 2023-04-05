@@ -8,22 +8,22 @@ module.exports = {
         const title = "Привіт!";
         const description = "Обери свою спеціальність та натисни на необхідну реакцію під цим повідомленням";
         const fields=[
-            { name: "113", value: `${SERVER_DATA.roleEmoji.s113}\t-\tПрикладна математика` },
-            { name: "121", value:`${SERVER_DATA.roleEmoji.s121}\t-\tІнженерія програмного забезпечення` },
-            { name: "122", value:`${SERVER_DATA.roleEmoji.s122}\t-\tКомп'ютерні науки` },
-            { name: "124", value:`${SERVER_DATA.roleEmoji.s124}\t-\tСистемний аналіз` }] 
+            { name: "113", value: `${interaction.guild.emojis.cache.find(emoji => emoji.name === '113')}\t-\tПрикладна математика` },
+            { name: "121", value:`${interaction.guild.emojis.cache.find(emoji => emoji.name === '121')}\t-\tІнженерія програмного забезпечення` },
+            { name: "122", value:`${interaction.guild.emojis.cache.find(emoji => emoji.name === '122')}\t-\tКомп'ютерні науки` },
+            { name: "124", value:`${interaction.guild.emojis.cache.find(emoji => emoji.name === '124')}\t-\tСистемний аналіз` }] 
         const footer = {
             text:`Раді бачити тебе тут!`,
-            icon_url:"https://cdn4.telegram-cdn.org/file/sj2F8bujRXY1Jw_zV45B02uZ30wVXASpwFxvq2rA_eFsT8H5AVTmidvrFfh-nMlPOMO_T4zshTZeXBcxP8r8ICaTazInvMe97rtzOjirR5UqvJRHgTSSl2lO-2GZFgKsRBm1v5gHf-ALVn1FJCZDN7mcp1Sx0KH7ZioKfRyMxCZFrbfunlYYnpD1qQ1Zy2HnmAwcQSL8WqEC0b5pDOgT3QgP4COi_aCPBFy5W8sfYCMdnTu-3Pncc3RpKgkXlqA42ZwWFtvdXgd1asZEXuwhLppZwhBTPM5_kA3oS7PxCBEvvApIKU38WFZXL_LtilVckcFg8t5GP55WHPUmV3pqxw.jpg"
+            icon_url:"https://scontent.fdnk3-2.fna.fbcdn.net/v/t39.30808-6/298428573_513910303870458_8762761012613065550_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eB5STRd_GqsAX_NMH7o&_nc_ht=scontent.fdnk3-2.fna&oh=00_AfBA0JJZG3K6Hg0AXQf7Chprp8ZWEyBcC2zPqfoH4bOQHA&oe=64323AD0"
         }
         const thumbnail = {
-            url:footer.icon_url,
-            width:100,
-            height:100,
+            url:"https://scontent.fdnk3-2.fna.fbcdn.net/v/t39.30808-6/298428573_513910303870458_8762761012613065550_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eB5STRd_GqsAX_NMH7o&_nc_ht=scontent.fdnk3-2.fna&oh=00_AfBA0JJZG3K6Hg0AXQf7Chprp8ZWEyBcC2zPqfoH4bOQHA&oe=64323AD0",
+            width:150,
+            height:150,
         }
         const image = {
-            url:"https://t4.ftcdn.net/jpg/03/64/94/67/360_F_364946785_HU0G0WLRpd9SjBxecLAy7En93HmdxbL5.jpg",
-            width:600,
+            url:"https://csc.knu.ua/media/news/4baeba3a-2e49-410f-990d-1aa54ffcfd18.jpg",
+            width:900,
             height:150,
         }
         const color = 0x0099FF;
@@ -32,7 +32,7 @@ module.exports = {
         SERVER_DATA.bindRole = message.id;
         const reactions = SERVER_DATA.roleEmoji;
         for(const reaction in reactions){
-            message.react(reactions[reaction]);
+            message.react(reactions[reaction]); 
         }
     }
 }
